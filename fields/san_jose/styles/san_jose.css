@@ -1,0 +1,88 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+header {
+	width: 100%;
+	padding: 0.5rem;
+	text-align: center;
+}
+
+main {
+	padding-bottom: 2rem;
+}
+
+button {
+	background: none;
+}
+
+.intro-table {
+	width: 30rem;
+	margin: 0 auto;
+}
+
+.intro p {
+	margin-top: 2rem;
+	font-size: 1.4rem;
+}
+
+.logo {
+	width: 15.8rem;
+	height: 5.4rem;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.table-container {
+	margin: 3rem auto 0;
+	width: 30rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4rem;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+thead {
+	background-color: red;
+	color: white;
+}
+
+table th, table td {
+	border: 0.1rem solid black;
+	padding: 0.5rem;
+	text-align: center;
+}
+
+tr {
+	height: 3rem;
+}
+
+.well-info {
+	margin-top: 4rem;
+}
+
+.info-container {
+	width: 30rem;
+	margin: 0 auto;
+}
+
+.info-container p:not(:first-of-type) {
+	margin-top: 2rem;
+}
+
+#info_paragraph {
+	width: 30rem;
+}

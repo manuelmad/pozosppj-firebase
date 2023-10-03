@@ -1,0 +1,8 @@
+.fields-container {
+	width: 70rem;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.fields-container div {
+	width: 20rem;
+}
