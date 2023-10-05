@@ -1,3 +1,5 @@
+import "./addWell.js";
+
 import { getDocs, collection } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 import { db } from "../../../src/index.js";
@@ -33,19 +35,18 @@ function addRowsToBody(data) {
 
 		button.addEventListener('click', ()=> {
 			info_paragraph.innerText = "";
-			info_paragraph.innerText = `
-			Nombre del pozo: ${well["nombre del pozo"]}.
-			Coordenadas de superficie: ${well["coordenada superf utm x"]} m, ${well["coordenada superf utm y"]} m.
-			Coordenadas de fondo: ${well["coordenada fondo utm x"]} m, ${well["coordenada fondo utm y"]} m.
+			info_paragraph.innerText = `Nombre del pozo: ${well["nombre del pozo"]}.
+			Coordenadas de superficie: ${well["coordenada superf utm x"].toFixed(2)} m, ${well["coordenada superf utm y"].toFixed(2)} m.
+			Coordenadas de fondo: ${well["coordenada fondo utm x"].toFixed(2)} m, ${well["coordenada fondo utm y"].toFixed(2)} m.
 			Referencia UTM: ${well["utm projection id"]}.
 			Tipo de pozo: ${well["tipo de pozo"]}.
 			Inicio de la perforación: ${date}/${month+1}/${year}.
 			Fin de la perforación: ${datef}/${monthf+1}/${yearf}.
 			Contratista de perforación: ${well["contratista perforacion"]}.
 			Nombre del taladro: ${well["nombre del taladro"]}.
-			Elevación del taladro: ${well["elevacion del taladro"]}.
+			Elevación del taladro: ${well["elevacion del taladro"].toFixed(1)} pies.
 			Referencia de elevación:  ${well["referencia de elevacion"]}.
-			Elevación del terreno: ${well["elevacion del terreno"]}.
+			Elevación del terreno: ${well["elevacion del terreno"].toFixed(1)} pies.
 			Locación en superficie: ${well["locacion en superficie"]}.
 		`;
 		});
@@ -66,6 +67,12 @@ function addRowsToBody(data) {
 
 const wellsInSanJose = await getDocs(collection(db, 'sanjose'));
 
+// const q = query(wellsInSanJose);
+
 // console.log(wellsInSanJose.docs);
 
 addRowsToBody(wellsInSanJose.docs);
+
+// onSnapshot(q, (querySnapshot) => {
+// 		addRowsToBody(querySnapshot.docs);
+// });
