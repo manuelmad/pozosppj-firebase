@@ -64,6 +64,8 @@ function addRowsToBody(data) {
 				"coordenada superf utm y": well["coordenada superf utm y"],
 				"coordenada fondo utm x": well["coordenada fondo utm x"],
 				"coordenada fondo utm y": well["coordenada fondo utm y"],
+				"longitud x": well["longitud x"],
+				"latitud y": well["latitud y"],
 				"utm projection id": well["utm projection id"],
 				"tipo de pozo": well["tipo de pozo"],
 				"inicio perforacion": well['inicio perforacion'],

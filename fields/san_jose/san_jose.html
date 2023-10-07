@@ -53,12 +53,16 @@
 		</section>
 		<section>
 			<div>
+				<p class="update-well-button__container">
+					<button id="update_well_btn">Actualizar pozo</button>
+				</p>
 				<p class="add-well-button__container">
 					<button id="add_well_btn">Agregar pozo</button>
 				</p>
 			</div>
 		</section>
 	</main>
+	<!-- Modal to add new wells -->
 	<div id="well_modal_container">
 		<div id="add_well_modal">
 			<p class="x-container">
@@ -139,8 +143,95 @@
 			</p>
 		</div>
 	</div>
+	<!-- New well added notification -->
 	<div id="add_success_container">
 		<p>Nuevo Pozo Agregado con éxito</p>
+	</div>
+
+	<!-- Modal to update existing wells -->
+	<div id="update_modal_container">
+		<div id="update_well_modal">
+			<p class="x-update-container">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="x_icon_update" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+					<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+				</svg>
+			</p>
+			<p>
+				<label for="well_name_update">Nombre del pozo:</label>
+				<input id="well_name_update" type="text" disabled>
+			</p>
+			<p>
+				<label for="utm_x_update">Coordenada UTM de superficie (E):</label>
+				<input id="utm_x_update" type="number">
+			</p>
+			<p>
+				<label for="utm_y_update">Coordenada UTM de superficie (N):</label>
+				<input id="utm_y_update" type="number">
+			</p>
+			<p>
+				<label for="utm_x_fondo_update">Coordenada UTM de fondo (E):</label>
+				<input id="utm_x_fondo_update" type="number">
+			</p>
+			<p>
+				<label for="utm_y_fondo_update">Coordenada UTM de fondo (N):</label>
+				<input id="utm_y_fondo_update" type="number">
+			</p>
+			<p>
+				<label for="long_x_update">Longitud (X):</label>
+				<input id="long_x_update" type="number">
+			</p>
+			<p>
+				<label for="lat_y_update">Latitud (Y):</label>
+				<input id="lat_y_update" type="number">
+			</p>
+			<p>
+				<label for="utm_id_update">UTM Projection ID:</label>
+				<input id="utm_id_update" type="text">
+			</p>
+			<p>
+				<label for="well_type_update">Tipo de Pozo:</label>
+				<input id="well_type_update" type="text">
+			</p>
+			<p>
+				<label for="drilling_init_update">Inicio de la perforación:</label>
+				<input id="drilling_init_update" type="datetime-local">
+			</p>
+			<p>
+				<label for="drilling_end_update">Final de la perforación:</label>
+				<input id="drilling_end_update" type="datetime-local">
+			</p>
+			<p>
+				<label for="drilling_contractor_update">Contratista de perforación:</label>
+				<input id="drilling_contractor_update" type="text">
+			</p>
+			<p>
+				<label for="rig_name_update">Nombre del taladro:</label>
+				<input id="rig_name_update" type="text">
+			</p>
+			<p>
+				<label for="rig_elevation_update">Elevación del taladro:</label>
+				<input id="rig_elevation_update" type="number">
+			</p>
+			<p>
+				<label for="elevation_ref_update">Referencia de elevación:</label>
+				<input id="elevation_ref_update" type="text">
+			</p>
+			<p>
+				<label for="ground_elevation_update">Elevación del terreno:</label>
+				<input id="ground_elevation_update" type="number">
+			</p>
+			<p>
+				<label for="location_update">Locación en superficie:</label>
+				<input id="location_update" type="text">
+			</p>
+			<p class="send-update-well__container">
+				<button id="send_update_well">Enviar</button>
+			</p>
+		</div>
+	</div>
+	<!-- well updated notification -->
+	<div id="update_success_container">
+		<p>Pozo Actualizado con éxito</p>
 	</div>
 	<script type="module" src="./js/san_jose.js"></script>
 </body>

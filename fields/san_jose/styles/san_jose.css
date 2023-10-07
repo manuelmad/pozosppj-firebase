@@ -98,17 +98,17 @@ tr {
 	line-height: 3rem;
 }
 
-.add-well-button__container {
+.add-well-button__container, .update-well-button__container {
 	text-align: center;
 	margin-top: 4rem;
 }
 
-.send-new-well__container {
+.send-new-well__container, .send-update-well__container {
 	text-align: center;
 	margin-top: 2rem;
 }
 
-#well_modal_container {
+#well_modal_container, #update_modal_container {
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -117,7 +117,7 @@ tr {
 	padding: 2rem;
 }
 
-#add_well_modal {
+#add_well_modal, #update_well_modal {
 	width: 28rem;
 	margin: 0 auto;
 	font-size: var(--medium-font);
@@ -126,16 +126,16 @@ tr {
 	background-color: white;
 }
 
-.x-container {
+.x-container, .x-update-container {
 	text-align: end;
 }
 
-#add_well_modal label {
+#add_well_modal label, #update_well_modal label  {
 	display: block;
 	margin-top: 1rem;
 }
 
-#add_well_modal input {
+#add_well_modal input, #update_well_modal input {
 	width: 100%;
 	height: 3rem;
 	border-radius: 0.5rem;
@@ -143,13 +143,13 @@ tr {
 	background-color: rgb(221, 219, 219);
 }
 
-#add_well_btn, #send_new_well {
+#add_well_btn, #send_new_well, #update_well_btn, #send_update_well {
 	width: 10rem;
 	height: 3rem;
 	border-radius: 0.5rem;
 }
 
-#add_success_container {
+#add_success_container, #update_success_container {
 	position: fixed;
 	width: 20rem;
 	height: 8rem;

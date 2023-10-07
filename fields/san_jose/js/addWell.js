@@ -86,10 +86,10 @@ async function addNewWell() {
         "tipo de pozo": well_type.value,
         "inicio perforacion": {
             seconds: (new Date(drilling_init.value).getTime())/1000
-        } ,
+        },
         "final perforacion": {
             seconds: (new Date(drilling_end.value).getTime())/1000
-        } ,
+        },
         "contratista perforacion": drilling_contractor.value,
         "nombre del taladro": rig_name.value,
         "elevacion del taladro": Number(rig_elevation.value),
