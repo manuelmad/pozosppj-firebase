@@ -48,9 +48,6 @@
 					<p id="info_paragraph">
 
 					</p>
-					<!-- <p class="history_paragraph">
-
-					</p> -->
 				</div>
 			</article>
 		</section>
@@ -62,75 +59,88 @@
 			</div>
 		</section>
 	</main>
-	<div id="add_well_modal">
-		<p class="x-container">
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="x_icon" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-				<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-			</svg>
-		</p>
-		<p>
-			<label for="well_name">Nombre del pozo:</label>
-			<input id="well_name" type="text">
-		</p>
-		<p>
-			<label for="utm_x">Coordenada UTM de superficie (E):</label>
-			<input id="utm_x" type="number">
-		</p>
-		<p>
-			<label for="utm_y">Coordenada UTM de superficie (N):</label>
-			<input id="utm_y" type="number">
-		</p>
-		<p>
-			<label for="long_x">Longitud (X):</label>
-			<input id="long_x" type="number">
-		</p>
-		<p>
-			<label for="lat_y">Latitud (Y):</label>
-			<input id="lat_y" type="number">
-		</p>
-		<p>
-			<label for="utm_id">UTM Projection ID:</label>
-			<input id="utm_id" type="text">
-		</p>
-		<p>
-			<label for="well_type">Tipo de Pozo:</label>
-			<input id="well_type" type="text">
-		</p>
-		<p>
-			<label for="drilling_init">Inicio de la perforación:</label>
-			<input id="drilling_init" type="datetime-local">
-		</p>
-		<p>
-			<label for="drilling_end">Final de la perforación:</label>
-			<input id="drilling_end" type="datetime-local">
-		</p>
-		<p>
-			<label for="drilling_contractor">Contratista de perforación:</label>
-			<input id="drilling_contractor" type="text">
-		</p>
-		<p>
-			<label for="rig_name">Nombre del taladro:</label>
-			<input id="rig_name" type="text">
-		</p>
-		<p>
-			<label for="rig_elevation">Elevación del taladro:</label>
-			<input id="rig_elevation" type="number">
-		</p>
-		<p>
-			<label for="elevation_ref">Referencia de elevación:</label>
-			<input id="elevation_ref" type="text">
-		</p>
-		<p>
-			<label for="ground_elevation">Elevación del terreno:</label>
-			<input id="ground_elevation" type="number">
-		</p>
-		<p>
-			<label for="location">Locación en superficie:</label>
-			<input id="location" type="text">
-		</p>
-		<p class="send-new-well__container">
-			<button id="send_new_well">Enviar</button>
-		</p>
+	<div id="well_modal_container">
+		<div id="add_well_modal">
+			<p class="x-container">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="x_icon" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+					<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+				</svg>
+			</p>
+			<p>
+				<label for="well_name">Nombre del pozo:</label>
+				<input id="well_name" type="text">
+			</p>
+			<p>
+				<label for="utm_x">Coordenada UTM de superficie (E):</label>
+				<input id="utm_x" type="number">
+			</p>
+			<p>
+				<label for="utm_y">Coordenada UTM de superficie (N):</label>
+				<input id="utm_y" type="number">
+			</p>
+			<p>
+				<label for="utm_x_fondo">Coordenada UTM de fondo (E):</label>
+				<input id="utm_x_fondo" type="number">
+			</p>
+			<p>
+				<label for="utm_y_fondo">Coordenada UTM de fondo (N):</label>
+				<input id="utm_y_fondo" type="number">
+			</p>
+			<p>
+				<label for="long_x">Longitud (X):</label>
+				<input id="long_x" type="number">
+			</p>
+			<p>
+				<label for="lat_y">Latitud (Y):</label>
+				<input id="lat_y" type="number">
+			</p>
+			<p>
+				<label for="utm_id">UTM Projection ID:</label>
+				<input id="utm_id" type="text">
+			</p>
+			<p>
+				<label for="well_type">Tipo de Pozo:</label>
+				<input id="well_type" type="text">
+			</p>
+			<p>
+				<label for="drilling_init">Inicio de la perforación:</label>
+				<input id="drilling_init" type="datetime-local">
+			</p>
+			<p>
+				<label for="drilling_end">Final de la perforación:</label>
+				<input id="drilling_end" type="datetime-local">
+			</p>
+			<p>
+				<label for="drilling_contractor">Contratista de perforación:</label>
+				<input id="drilling_contractor" type="text">
+			</p>
+			<p>
+				<label for="rig_name">Nombre del taladro:</label>
+				<input id="rig_name" type="text">
+			</p>
+			<p>
+				<label for="rig_elevation">Elevación del taladro:</label>
+				<input id="rig_elevation" type="number">
+			</p>
+			<p>
+				<label for="elevation_ref">Referencia de elevación:</label>
+				<input id="elevation_ref" type="text">
+			</p>
+			<p>
+				<label for="ground_elevation">Elevación del terreno:</label>
+				<input id="ground_elevation" type="number">
+			</p>
+			<p>
+				<label for="location">Locación en superficie:</label>
+				<input id="location" type="text">
+			</p>
+			<p class="send-new-well__container">
+				<button id="send_new_well">Enviar</button>
+			</p>
+		</div>
+	</div>
+	<div id="add_success_container">
+		<p>Nuevo Pozo Agregado con éxito</p>
 	</div>
 	<script type="module" src="./js/san_jose.js"></script>
 </body>

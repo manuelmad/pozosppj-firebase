@@ -1,16 +1,24 @@
 import "./addWell.js";
+import "./updateWell.js";
 
 import { getDocs, collection } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 import { db } from "../../../src/index.js";
 
 // console.log(db);
+// Array containing all the names of the well in the data base, to be used in addWell.js to add only wells thta don't exist
+export let well_names_array = [];
+
+// Object containing the current viewed well, to be used in updateWell.js to update this especific well only
+export let current_viewed_well = {};
 
 const info_paragraph = document.getElementById("info_paragraph");
 const tbody = document.getElementById("tbody");
 
 function addRowsToBody(data) {
-
+	tbody.innerHTML = "";
+	well_names_array = [];
+	current_viewed_well = {};
 	data.forEach(item => {
 		const well = item.data();
 
@@ -35,20 +43,40 @@ function addRowsToBody(data) {
 
 		button.addEventListener('click', ()=> {
 			info_paragraph.innerText = "";
-			info_paragraph.innerText = `Nombre del pozo: ${well["nombre del pozo"]}.
-			Coordenadas de superficie: ${well["coordenada superf utm x"].toFixed(2)} m, ${well["coordenada superf utm y"].toFixed(2)} m.
-			Coordenadas de fondo: ${well["coordenada fondo utm x"].toFixed(2)} m, ${well["coordenada fondo utm y"].toFixed(2)} m.
-			Referencia UTM: ${well["utm projection id"]}.
-			Tipo de pozo: ${well["tipo de pozo"]}.
-			Inicio de la perforación: ${date}/${month+1}/${year}.
-			Fin de la perforación: ${datef}/${monthf+1}/${yearf}.
-			Contratista de perforación: ${well["contratista perforacion"]}.
-			Nombre del taladro: ${well["nombre del taladro"]}.
-			Elevación del taladro: ${well["elevacion del taladro"].toFixed(1)} pies.
-			Referencia de elevación:  ${well["referencia de elevacion"]}.
-			Elevación del terreno: ${well["elevacion del terreno"].toFixed(1)} pies.
-			Locación en superficie: ${well["locacion en superficie"]}.
-		`;
+			info_paragraph.innerHTML= `
+				<b>Nombre del pozo:</b> ${well["nombre del pozo"]}.</br>
+				<b>Coordenadas de superficie:</b> ${well["coordenada superf utm x"].toFixed(2)} m, ${well["coordenada superf utm y"].toFixed(2)} m.</br>
+				<b>Coordenadas de fondo:</b> ${well["coordenada fondo utm x"].toFixed(2)} m, ${well["coordenada fondo utm y"].toFixed(2)} m.</br>
+				<b>Referencia UTM:</b> ${well["utm projection id"]}.</br>
+				<b>Tipo de pozo:</b> ${well["tipo de pozo"]}.</br>
+				<b>Inicio de la perforación:</b> ${date}/${month+1}/${year}.</br>
+				<b>Fin de la perforación:</b> ${datef}/${monthf+1}/${yearf}.</br>
+				<b>Contratista de perforación:</b> ${well["contratista perforacion"]}.</br>
+				<b>Nombre del taladro:</b> ${well["nombre del taladro"]}.</br>
+				<b>Elevación del taladro:</b> ${well["elevacion del taladro"].toFixed(1)} pies.</br>
+				<b>Referencia de elevación:</b>  ${well["referencia de elevacion"]}.</br>
+				<b>Elevación del terreno:</b> ${well["elevacion del terreno"].toFixed(1)} pies.</br>
+				<b>Locación en superficie:</b> ${well["locacion en superficie"]}.
+			`;
+			current_viewed_well = {
+				"nombre del pozo": well["nombre del pozo"],
+				"coordenada superf utm x": well["coordenada superf utm x"],
+				"coordenada superf utm y": well["coordenada superf utm y"],
+				"coordenada fondo utm x": well["coordenada fondo utm x"],
+				"coordenada fondo utm y": well["coordenada fondo utm y"],
+				"utm projection id": well["utm projection id"],
+				"tipo de pozo": well["tipo de pozo"],
+				"inicio perforacion": well['inicio perforacion'],
+				"final perforacion": well['final perforacion'],
+				"contratista perforacion": well["contratista perforacion"],
+				"nombre del taladro": well["nombre del taladro"],
+				"elevacion del taladro": well["elevacion del taladro"],
+				"referencia de elevacion": well["referencia de elevacion"],
+				"elevacion del terreno": well["elevacion del terreno"],
+				"locacion en superficie": well["locacion en superficie"]
+			};
+
+			console.log(current_viewed_well);
 		});
 
 		td.appendChild(button);
@@ -61,18 +89,17 @@ function addRowsToBody(data) {
 		tr.appendChild(td3);
 
 		tbody.appendChild(tr);
+
+		// Add the well into the array
+		well_names_array.push(well["nombre del pozo"]);
 	});
+
+	// console.log(well_names_array);
 }
 
 
 const wellsInSanJose = await getDocs(collection(db, 'sanjose'));
 
-// const q = query(wellsInSanJose);
-
 // console.log(wellsInSanJose.docs);
 
 addRowsToBody(wellsInSanJose.docs);
-
-// onSnapshot(q, (querySnapshot) => {
-// 		addRowsToBody(querySnapshot.docs);
-// });
