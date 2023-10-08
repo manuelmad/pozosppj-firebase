@@ -6,16 +6,29 @@
 
 html {
 	font-size: 62.5%;
+	font-family: 'Bai Jamjuree', sans-serif;
+}
+
+:root {
+	--small-font: 1.2rem;
+	--medium-font: 1.6rem;
+	--large-font: 1.8rem;
+	--xlarge-font: 2.2rem;
+
+	--background-black: #282828;
+	--vivid-red: #cf2e2e;
+	--palid-red: #FF214F;
 }
 
 header {
 	width: 100%;
-	padding: 0.5rem;
+	padding: 1rem;
 	text-align: center;
 }
 
 main {
 	padding-bottom: 2rem;
+	font-size: var(--medium-font);
 }
 
 .logo {
@@ -36,33 +49,43 @@ h1 {
 	grid-gap: 2rem;
 	align-items: center;
 	justify-items: center;
-	margin-top: 2rem;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
 }
 
 .fields-container a {
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 .fields-container div {
 	width: 13rem;
 	height: 25rem;
-	border: 0.3rem solid red;
-	border-radius: 0.5rem;
+	border-radius: 1.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
 }
 
 footer {
-	font-size: 1.4rem;
+	font-size: var(--medium-font);
+	margin-top: 4rem;
+	padding: 2rem 1rem 4rem;
+	background-color: var(--background-black);
+	color: var(--palid-red);
 	text-align: center;
-	padding-top: 2rem;
-	padding-bottom: 4rem;
-	background-color: red;
-	color: white;
 }
 
 footer p {
 	margin-top: 2rem;
+}
+
+.first-p {
+	color: white;
+}
+
+.second-p {
+	margin-top: 3rem;
+	color: gray;
 }

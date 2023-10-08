@@ -45,8 +45,8 @@ function addRowsToBody(data) {
 			info_paragraph.innerText = "";
 			info_paragraph.innerHTML= `
 				<b>Nombre del pozo:</b> ${well["nombre del pozo"]}.</br>
-				<b>Coordenadas de superficie:</b> ${well["coordenada superf utm x"].toFixed(2)} m, ${well["coordenada superf utm y"].toFixed(2)} m.</br>
-				<b>Coordenadas de fondo:</b> ${well["coordenada fondo utm x"].toFixed(2)} m, ${well["coordenada fondo utm y"].toFixed(2)} m.</br>
+				<b>Coordenadas de superficie:</b> E: ${well["coordenada superf utm x"].toFixed(2)} m, N: ${well["coordenada superf utm y"].toFixed(2)} m.</br>
+				<b>Coordenadas de fondo:</b> E: ${well["coordenada fondo utm x"].toFixed(2)} m, N: ${well["coordenada fondo utm y"].toFixed(2)} m.</br>
 				<b>Referencia UTM:</b> ${well["utm projection id"]}.</br>
 				<b>Tipo de pozo:</b> ${well["tipo de pozo"]}.</br>
 				<b>Inicio de la perforación:</b> ${date}/${month+1}/${year}.</br>

@@ -6,6 +6,7 @@
 
 html {
 	font-size: 62.5%;
+	font-family: 'Bai Jamjuree', sans-serif;
 }
 
 :root {
@@ -15,11 +16,15 @@ html {
 	--xlarge-font: 2.2rem;
 
 	--background-shadow: rgba(32,35,41,.8);
+	--background-black: #282828;
+	--vivid-red: #cf2e2e;
+	--palid-red: #FF214F;
+	--background-article: #292e38;
 }
 
 header {
 	width: 100%;
-	padding: 0.5rem;
+	padding: 1rem;
 	text-align: center;
 }
 
@@ -61,7 +66,7 @@ table {
 }
 
 thead {
-	background-color: red;
+	background-color: var(--vivid-red);
 	color: white;
 }
 
@@ -74,14 +79,24 @@ table th, table td {
 table button {
 	width: 6rem;
 }
+
 tr {
 	height: 3rem;
 }
 
 .well-info {
-	margin-top: 4rem;
-	min-height: 50rem;
-	border: 0.1rem solid gray;
+	width: 30rem;
+	margin: 4rem auto 0;
+	min-height: 30rem;
+	border: 0.3rem solid var(--background-article);
+	/* background-color: var(--background-article);
+	color: white; */
+	border-radius: 1rem;
+	padding: 0.5rem;
+}
+
+.well-info b {
+	color: var(--vivid-red);
 }
 
 .info-container {
@@ -112,7 +127,8 @@ tr {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	height: 112rem;
+	/* height: 114rem; */
+	height: 120rem;
 	background-color: var(--background-shadow);
 	padding: 2rem;
 }
@@ -144,9 +160,11 @@ tr {
 }
 
 #add_well_btn, #send_new_well, #update_well_btn, #send_update_well {
-	width: 10rem;
-	height: 3rem;
+	width: 15rem;
+	height: 4rem;
 	border-radius: 0.5rem;
+	font-size: var(--medium-font);
+	font-family: 'Bai Jamjuree', sans-serif;
 }
 
 #add_success_container, #update_success_container {
@@ -158,8 +176,8 @@ tr {
 	background-image: radial-gradient(circle at 50% -20.71%, #db8e00 0, #e48000 10%, #ec6f00 20%, #f25b00 30%, #f64100 40%, #f81010 50%, #f90021 60%, #f80030 70%, #f6003e 80%, #f2004e 90%, #ec005f 100%);
 	border-radius: 01rem;
 	font-size: var(--medium-font);
-	text-align: center;
 	color: white;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 }

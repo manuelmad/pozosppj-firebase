@@ -1,15 +1,28 @@
-/*.intro-table {
-	width: 50rem;
+.intro-table {
+	width: 40rem;
 }
 
 .table-container {
-	width: 50rem;
-}*/
+	width: 40rem;
+}
+
+.well-info {
+	width: 64rem;
+	padding: 2rem;
+}
 
 .info-container {
-	width: 50rem;
+	width: 60rem;
 }
 
-#history_paragraph {
-	width: 50rem;
+#info_paragraph {
+	width: 60rem;
 }
+
+.info-container h2 {
+	text-align: center;
+}
+
+/* #history_paragraph {
+	width: 50rem;
+} */
