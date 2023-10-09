@@ -128,7 +128,7 @@ tr {
 	top: 0;
 	width: 100%;
 	/* height: 114rem; */
-	height: 120rem;
+	height: 150rem;
 	background-color: var(--background-shadow);
 	padding: 2rem;
 }
@@ -138,12 +138,18 @@ tr {
 	margin: 0 auto;
 	font-size: var(--medium-font);
 	border-radius: 0.5rem;
-	padding: 0.5rem;
+	padding: 1rem;
 	background-color: white;
 }
 
 .x-container, .x-update-container {
 	text-align: end;
+}
+
+.x-container svg, .x-update-container svg {
+	cursor: pointer;
+	width: 2rem;
+	height: 2rem;
 }
 
 #add_well_modal label, #update_well_modal label  {
@@ -157,17 +163,28 @@ tr {
 	border-radius: 0.5rem;
 	border: none;
 	background-color: rgb(221, 219, 219);
+	padding: 0.5rem;
 }
 
 #add_well_btn, #send_new_well, #update_well_btn, #send_update_well {
 	width: 15rem;
 	height: 4rem;
-	border-radius: 0.5rem;
+	border-radius: 1rem;
 	font-size: var(--medium-font);
 	font-family: 'Bai Jamjuree', sans-serif;
+	cursor: pointer;
+	background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+	color: white;
+	border: none;
 }
 
-#add_success_container, #update_success_container {
+#add_well_btn:active, #send_new_well:active, #update_well_btn:active, #send_update_well:active {
+	background: radial-gradient(circle at 10% 20%, rgb(252, 251, 251) 0%, rgb(252, 252, 252) 90%);
+	color: black;
+	border: 0.3rem solid var(--vivid-red);
+} 
+
+#add_success_container p, #update_success_container p {
 	position: fixed;
 	width: 20rem;
 	height: 8rem;
@@ -178,6 +195,15 @@ tr {
 	font-size: var(--medium-font);
 	color: white;
 	display: flex;
-	justify-content: center;
+	text-align: center;
 	align-items: center;
+	padding: 0.5rem;
+}
+
+#add_success_container, #update_success_container {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 150rem;
+	background-color: var(--background-shadow);
 }

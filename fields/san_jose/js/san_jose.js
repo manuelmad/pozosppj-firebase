@@ -49,8 +49,8 @@ function addRowsToBody(data) {
 				<b>Coordenadas de fondo:</b> E: ${well["coordenada fondo utm x"].toFixed(2)} m, N: ${well["coordenada fondo utm y"].toFixed(2)} m.</br>
 				<b>Referencia UTM:</b> ${well["utm projection id"]}.</br>
 				<b>Tipo de pozo:</b> ${well["tipo de pozo"]}.</br>
-				<b>Inicio de la perforación:</b> ${date}/${month+1}/${year}.</br>
-				<b>Fin de la perforación:</b> ${datef}/${monthf+1}/${yearf}.</br>
+				<b>Inicio de perforación:</b> ${date}/${month+1}/${year}.</br>
+				<b>Fin de perforación:</b> ${datef}/${monthf+1}/${yearf}.</br>
 				<b>Contratista de perforación:</b> ${well["contratista perforacion"]}.</br>
 				<b>Nombre del taladro:</b> ${well["nombre del taladro"]}.</br>
 				<b>Elevación del taladro:</b> ${well["elevacion del taladro"].toFixed(1)} pies.</br>

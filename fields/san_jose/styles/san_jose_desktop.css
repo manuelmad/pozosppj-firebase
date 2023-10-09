@@ -23,6 +23,7 @@
 	text-align: center;
 }
 
-/* #history_paragraph {
-	width: 50rem;
-} */
+#add_well_modal, #update_well_modal {
+	width: 40rem;
+	padding: 3rem;
+}

@@ -45,15 +45,35 @@ function showUpdateModal() {
     lat_y_update.value = current_viewed_well["latitud y"];
     utm_id_update.value = current_viewed_well["utm projection id"];
     well_type_update.value = current_viewed_well["tipo de pozo"];
+    // For the dates is a bit complicated:
     const datei = new Date();
-    datei.setTime((current_viewed_well["inicio perforacion"].seconds)*1000);
-    console.log(datei);
-    drilling_init_update.value = datei; // El input datetime-local no está tomando el valor
-    //https://es.stackoverflow.com/questions/239227/asignar-datetime-a-input-type-datetime-local-con-value
+    let drillInit = (current_viewed_well["inicio perforacion"].seconds)*1000-16200000; // I had to sustract 4,5 hours (16,2 millions miliseconds) because JS added 4,5 hours to the date coming from Firebase.
+    //console.log(drillInit);
+    if(!isNaN(drillInit)) {
+        datei.setTime(drillInit);
+        let x = datei.toISOString();
+        //console.log(x);
+        drilling_init_update.value = x.substring(0,21);
+        //console.log(drilling_init_update.value);
+    } else {
+        datei.setTime(0);
+    }
+    console.log(drilling_init_update.value);
+    
     const datef = new Date();
-    datef.setTime((current_viewed_well["final perforacion"].seconds)*1000);
-    console.log(datef);
-    drilling_end_update.value = datef; // El input datetime-local no está tomando el valor
+    let drillFinal = (current_viewed_well["final perforacion"].seconds)*1000-16200000; // I had to sustract 4,5 hours (16,2 millions miliseconds) because JS added 4,5 hours to the date coming from Firebase.
+    console.log(drillFinal);
+    if(!isNaN(drillFinal)) {
+        datef.setTime(drillFinal);
+        let y = datef.toISOString();
+        //console.log(y);
+        drilling_end_update.value = y.substring(0,21);
+        //console.log(drilling_end_update.value);
+    } else {
+        datef.setTime(0);
+    }
+    console.log(drilling_end_update.value);
+
     drilling_contractor_update.value = current_viewed_well["contratista perforacion"];
     rig_name_update.value = current_viewed_well["nombre del taladro"];
     rig_elevation_update.value = current_viewed_well["elevacion del taladro"];
@@ -68,8 +88,6 @@ function showUpdateModal() {
         behavior: "smooth",
       });
 
-    console.log(drilling_init_update.value);
-    console.log(drilling_end_update.value);
 }
 
 const x_icon_update = document.getElementById("x_icon_update");
@@ -110,10 +128,10 @@ async function updateExistingWell() {
         "utm projection id": utm_id_update.value,
         "tipo de pozo": well_type_update.value,
         "inicio perforacion": {
-            seconds: (new Date(drilling_init_update.value).getTime())/1000
+            seconds: ((new Date(drilling_init_update.value).getTime())/1000)+1800 // I had to add 30 minutes (1800 second)s because Firebase subastracts half an hour to the date coming from JS
         } ,
         "final perforacion": {
-            seconds: (new Date(drilling_end_update.value).getTime())/1000
+            seconds: ((new Date(drilling_end_update.value).getTime())/1000)+1800 // I had to add 30 minutes (1800 second)s because Firebase subastracts half an hour to the date coming from JS
         } ,
         "contratista perforacion": drilling_contractor_update.value,
         "nombre del taladro": rig_name_update.value,
