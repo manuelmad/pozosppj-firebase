@@ -1,7 +1,8 @@
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-import { db } from "../../../src/index.js";
+import { db } from "../../../src/firebase.js";
 
-import { well_names_array, current_viewed_well } from "./san_jose.js";
+
+import { current_viewed_well } from "./san_jose.js";
 
 // Accesing all inputs in udate nodal
 const well_name_update = document.getElementById("well_name_update");
@@ -58,11 +59,11 @@ function showUpdateModal() {
     } else {
         datei.setTime(0);
     }
-    console.log(drilling_init_update.value);
+    // console.log(drilling_init_update.value);
     
     const datef = new Date();
     let drillFinal = (current_viewed_well["final perforacion"].seconds)*1000-16200000; // I had to sustract 4,5 hours (16,2 millions miliseconds) because JS added 4,5 hours to the date coming from Firebase.
-    console.log(drillFinal);
+    // console.log(drillFinal);
     if(!isNaN(drillFinal)) {
         datef.setTime(drillFinal);
         let y = datef.toISOString();
@@ -72,7 +73,7 @@ function showUpdateModal() {
     } else {
         datef.setTime(0);
     }
-    console.log(drilling_end_update.value);
+    // console.log(drilling_end_update.value);
 
     drilling_contractor_update.value = current_viewed_well["contratista perforacion"];
     rig_name_update.value = current_viewed_well["nombre del taladro"];
@@ -146,10 +147,6 @@ async function updateExistingWell() {
 
     setTimeout(()=>{
         hideUpdateSuccess();
-        window.location.reload();
     }, 2000);
     
 }
-
-// Los inputs tendrán como values por defecto los provenientes de current_viewed_well para que el usuario envíe esos mismos si no los modifica.
-// No puedo asignarle el valor de la fecha al nuevo input por ser de un tipo raro.

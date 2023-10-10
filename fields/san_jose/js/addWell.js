@@ -1,5 +1,5 @@
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-import { db } from "../../../src/index.js";
+import { db } from "../../../src/firebase.js";
 
 import { well_names_array } from "./san_jose.js";
 
@@ -103,7 +103,6 @@ async function addNewWell() {
 
     setTimeout(()=>{
         hideAddSuccess();
-        window.location.reload();
     }, 2000);
     
 }
