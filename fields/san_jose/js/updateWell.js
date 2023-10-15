@@ -4,7 +4,7 @@ import { db } from "../../../src/firebase.js";
 
 import { current_viewed_well } from "./san_jose.js";
 
-// Accesing all inputs in udate nodal
+// Accesing all inputs in update modal
 const well_name_update = document.getElementById("well_name_update");
 const utm_x_update = document.getElementById("utm_x_update");
 const utm_y_update = document.getElementById("utm_y_update");
@@ -24,9 +24,8 @@ const ground_elevation_update = document.getElementById("ground_elevation_update
 const location_update = document.getElementById("location_update");
 
 
-// show / hide Add Modal
+// show / hide Update Modal
 const update_modal_container = document.getElementById("update_modal_container");
-// update_modal_container.style.display = "none";
 
 const update_well_btn = document.getElementById("update_well_btn");
 update_well_btn.addEventListener("click", showUpdateModal);
@@ -98,9 +97,8 @@ function hideUpdateModal() {
 	update_modal_container.style.display = "none";
 }
 
-// show / hide Success Add Modal
+// show / hide Success Update Modal
 const update_success_container = document.getElementById("update_success_container");
-// update_success_container.style.display = "none";
 
 function showUpdateSuccess() {
     update_success_container.style.display = "flex";
@@ -148,5 +146,4 @@ async function updateExistingWell() {
     setTimeout(()=>{
         hideUpdateSuccess();
     }, 2000);
-    
 }

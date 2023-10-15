@@ -58,6 +58,9 @@
 					<p class="update-well-button__container">
 						<button id="update_well_btn">Actualizar pozo</button>
 					</p>
+					<p class="delete-well-button__container">
+						<button id="delete_well_btn">Eliminar pozo</button>
+					</p>
 					<p class="add-well-button__container">
 						<button id="add_well_btn">Agregar pozo</button>
 					</p>
@@ -255,6 +258,27 @@
 	<!-- well updated notification -->
 	<div id="update_success_container">
 		<p>Pozo Actualizado con éxito</p>
+	</div>
+	<!-- Modal to delete existing wells -->
+	<div id="delete_modal_container">
+		<div id="delete_well_modal">
+			<p class="x-delete-container">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="x_icon_delete" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+					<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+				</svg>
+			</p>
+			<p id="delete_confirmation__paragraph">
+
+			</p>
+			<p class="send-delete-well__container">
+				<button id="send_delete_well">Confirmar</button>
+				<button id="cancel_delete_well">Cancelar</button>
+			</p>
+		</div>
+	</div>
+	<!-- well delete notification -->
+	<div id="delete_success_container">
+		<p>Pozo Eliminado con éxito</p>
 	</div>
 	<script type="module" src="./js/san_jose.js"></script>
 </body>

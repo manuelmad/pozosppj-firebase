@@ -44,3 +44,19 @@
 	width: 40rem;
 	padding: 3rem;
 }
+
+#delete_modal_container, #well_modal_container {
+	height: 150rem;
+}
+
+#delete_well_modal {
+	width: 50rem;
+	padding: 1rem;
+	height: 18rem;
+	top: calc(50vh - 9rem);
+	left: calc(50vw - 25rem);
+}
+
+#delete_confirmation__paragraph {
+	margin-top: 1rem;
+}

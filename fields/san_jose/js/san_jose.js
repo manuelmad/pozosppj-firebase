@@ -1,5 +1,6 @@
 import "./addWell.js";
 import "./updateWell.js";
+import "./deleteWell.js";
 
 import { getDocs, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 

@@ -116,17 +116,17 @@ tr {
 	line-height: 3rem;
 }
 
-.add-well-button__container, .update-well-button__container {
+.add-well-button__container, .update-well-button__container, .delete-well-button__container {
 	text-align: center;
 	margin-top: 4rem;
 }
 
-.send-new-well__container, .send-update-well__container {
+.send-new-well__container, .send-update-well__container, .send-delete-well__container {
 	text-align: center;
 	margin-top: 2rem;
 }
 
-#well_modal_container, #update_modal_container {
+#well_modal_container, #update_modal_container, #delete_modal_container {
 	display: none;
 	position: absolute;
 	top: 0;
@@ -137,7 +137,11 @@ tr {
 	padding: 2rem;
 }
 
-#add_well_modal, #update_well_modal {
+#delete_modal_container, #well_modal_container {
+	height: 200rem;
+}
+
+#add_well_modal, #update_well_modal, #delete_well_modal {
 	width: 28rem;
 	margin: 0 auto;
 	font-size: var(--medium-font);
@@ -146,11 +150,19 @@ tr {
 	background-color: white;
 }
 
-.x-container, .x-update-container {
+#delete_well_modal {
+	position: fixed;
+	/* width: 20rem; */
+	height: 24rem;
+	top: calc(50vh - 12rem);
+	left: calc(50vw - 14rem);
+}
+
+.x-container, .x-update-container, .x-delete-container {
 	text-align: end;
 }
 
-.x-container svg, .x-update-container svg {
+.x-container svg, .x-update-container svg, .x-delete-container svg {
 	cursor: pointer;
 	width: 2rem;
 	height: 2rem;
@@ -170,7 +182,7 @@ tr {
 	padding: 0.5rem;
 }
 
-#add_well_btn, #send_new_well, #send_update_well {
+#add_well_btn, #send_new_well, #send_update_well, #delete_well_btn, #send_delete_well {
 	width: 15rem;
 	height: 4rem;
 	border-radius: 1rem;
@@ -182,31 +194,35 @@ tr {
 	border: none;
 }
 
-#update_well_btn {
-	width: 15rem;
-	height: 4rem;
-	border-radius: 1rem;
-	font-size: var(--medium-font);
-	font-family: 'Bai Jamjuree', sans-serif;
-	cursor: pointer;
-	background: radial-gradient(circle at 10% 20%, rgb(252, 251, 251) 0%, rgb(252, 252, 252) 90%);
-	color: black;
-	border: 0.3rem solid var(--vivid-red);
-}
-
-#update_well_btn:active {
-	background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
-	color: white;
-	border: none;
-}
-
-#add_well_btn:active, #send_new_well:active, #send_update_well:active {
+#add_well_btn:active, #send_new_well:active, #send_update_well:active, #delete_well_btn:active, #send_delete_well:active {
 	background: radial-gradient(circle at 10% 20%, rgb(252, 251, 251) 0%, rgb(252, 252, 252) 90%);
 	color: black;
 	border: 0.3rem solid var(--vivid-red);
 } 
 
-#add_success_container p, #update_success_container p {
+#update_well_btn, #cancel_delete_well {
+	width: 15rem;
+	height: 4rem;
+	border-radius: 1rem;
+	font-size: var(--medium-font);
+	font-family: 'Bai Jamjuree', sans-serif;
+	cursor: pointer;
+	background: radial-gradient(circle at 10% 20%, rgb(252, 251, 251) 0%, rgb(252, 252, 252) 90%);
+	color: black;
+	border: 0.3rem solid var(--vivid-red);
+}
+
+#update_well_btn:active, #cancel_delete_well:active {
+	background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+	color: white;
+	border: none;
+}
+
+#send_delete_well, #cancel_delete_well {
+	margin-top: 1rem;
+}
+
+#add_success_container p, #update_success_container p, #delete_success_container p {
 	position: fixed;
 	width: 20rem;
 	height: 8rem;
@@ -222,7 +238,7 @@ tr {
 	padding: 0.5rem;
 }
 
-#add_success_container, #update_success_container {
+#add_success_container, #update_success_container, #delete_success_container {
 	display: none;
 	position: absolute;
 	top: 0;
