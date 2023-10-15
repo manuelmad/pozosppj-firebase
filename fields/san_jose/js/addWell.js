@@ -11,6 +11,26 @@ const add_well_btn = document.getElementById("add_well_btn");
 add_well_btn.addEventListener("click", showAddModal);
 
 function showAddModal() {
+    // Clean all inputs, becaused they are cached
+    well_name.value = "";
+    utm_x.value = "";
+    utm_y.value = "";
+    utm_x_fondo.value = "";
+    utm_y_fondo.value = "";
+    long_x.value = "";
+    lat_y.value = "";
+    utm_id.value = "";
+    well_type.value = "";
+    drilling_init.value = "";
+    drilling_end.value = "";
+    drilling_contractor.value = "";
+    rig_name.value = "";
+    rig_elevation.value = "";
+    elevation_ref.value = "";
+    ground_elevation.value = "";
+    location.value = "";
+
+    // Show modal and scroll to the top of the screen
     well_modal_container.style.display = "block";
     window.scroll({
         top: 0,
