@@ -87,12 +87,11 @@ tr {
 .well-info {
 	width: 30rem;
 	margin: 4rem auto 0;
-	min-height: 30rem;
-	border: 0.3rem solid var(--background-article);
+	/* min-height: 30rem; */
+	/* border: 0.3rem solid var(--background-article); */
 	/* background-color: var(--background-article);
 	color: white; */
-	border-radius: 1rem;
-	padding: 0.5rem;
+	/* border-radius: 1rem; */
 }
 
 .well-info b {
@@ -101,7 +100,11 @@ tr {
 
 .info-container {
 	width: 30rem;
+	min-height: 45rem;
 	margin: 0 auto;
+	border: 0.3rem solid var(--background-article);
+	border-radius: 1rem;
+	padding: 0.5rem;
 }
 
 .info-container p {
@@ -124,6 +127,7 @@ tr {
 }
 
 #well_modal_container, #update_modal_container {
+	display: none;
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -166,7 +170,7 @@ tr {
 	padding: 0.5rem;
 }
 
-#add_well_btn, #send_new_well, #update_well_btn, #send_update_well {
+#add_well_btn, #send_new_well, #send_update_well {
 	width: 15rem;
 	height: 4rem;
 	border-radius: 1rem;
@@ -178,7 +182,25 @@ tr {
 	border: none;
 }
 
-#add_well_btn:active, #send_new_well:active, #update_well_btn:active, #send_update_well:active {
+#update_well_btn {
+	width: 15rem;
+	height: 4rem;
+	border-radius: 1rem;
+	font-size: var(--medium-font);
+	font-family: 'Bai Jamjuree', sans-serif;
+	cursor: pointer;
+	background: radial-gradient(circle at 10% 20%, rgb(252, 251, 251) 0%, rgb(252, 252, 252) 90%);
+	color: black;
+	border: 0.3rem solid var(--vivid-red);
+}
+
+#update_well_btn:active {
+	background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+	color: white;
+	border: none;
+}
+
+#add_well_btn:active, #send_new_well:active, #send_update_well:active {
 	background: radial-gradient(circle at 10% 20%, rgb(252, 251, 251) 0%, rgb(252, 252, 252) 90%);
 	color: black;
 	border: 0.3rem solid var(--vivid-red);
@@ -201,6 +223,7 @@ tr {
 }
 
 #add_success_container, #update_success_container {
+	display: none;
 	position: absolute;
 	top: 0;
 	width: 100%;

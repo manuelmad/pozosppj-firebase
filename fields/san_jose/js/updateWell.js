@@ -26,7 +26,7 @@ const location_update = document.getElementById("location_update");
 
 // show / hide Add Modal
 const update_modal_container = document.getElementById("update_modal_container");
-update_modal_container.style.display = "none";
+// update_modal_container.style.display = "none";
 
 const update_well_btn = document.getElementById("update_well_btn");
 update_well_btn.addEventListener("click", showUpdateModal);
@@ -100,7 +100,7 @@ function hideUpdateModal() {
 
 // show / hide Success Add Modal
 const update_success_container = document.getElementById("update_success_container");
-update_success_container.style.display = "none";
+// update_success_container.style.display = "none";
 
 function showUpdateSuccess() {
     update_success_container.style.display = "flex";

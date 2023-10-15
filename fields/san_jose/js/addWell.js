@@ -5,7 +5,7 @@ import { well_names_array } from "./san_jose.js";
 
 // show / hide Add Modal
 const well_modal_container = document.getElementById("well_modal_container");
-well_modal_container.style.display = "none";
+// well_modal_container.style.display = "none";
 
 const add_well_btn = document.getElementById("add_well_btn");
 add_well_btn.addEventListener("click", showAddModal);
@@ -29,7 +29,7 @@ function hideAddModal() {
 
 // show / hide Success Add Modal
 const add_success_container = document.getElementById("add_success_container");
-add_success_container.style.display = "none";
+// add_success_container.style.display = "none";
 
 function showAddSuccess() {
     add_success_container.style.display = "flex";
