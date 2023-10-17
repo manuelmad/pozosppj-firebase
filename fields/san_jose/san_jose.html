@@ -17,21 +17,17 @@
 </head>
 <body>
 	<header>
-		<div>
+		<div class="logo-title__container">
 			<a href="../../index.html">
 				<img class="logo" src="../../imgs/logo-ppj.png">
 			</a>
+			<h1>CAMPO SAN JOSÉ</h1>
 		</div>
 	</header>
 	<main>
-		<section class="intro">
-			<div class="intro-table">
-				<h1>CAMPO SAN JOSÉ</h1>
-				<p>Haga clic sobre el nombre del pozo de su interés para obtener información detallada.</p>
-			</div>
-		</section>
 		<section class="table-and-info">
 			<article class="well-table">
+				<p>Haga clic sobre el nombre del pozo de su interés para obtener información detallada.</p>
 				<div class="table-container">
 					<table>
 						<thead>
@@ -46,6 +42,9 @@
 						</tbody>
 					</table>
 				</div>
+				<p class="add-well-button__container">
+					<button id="add_well_btn">Agregar nuevo pozo</button>
+				</p>
 			</article>
 			<article class="well-info">
 				<div class="info-container">
@@ -56,48 +55,38 @@
 				</div>
 				<div class="buttons-container">
 					<p class="update-well-button__container">
-						<button id="update_well_btn">Actualizar pozo</button>
+						<button id="update_well_btn">
+							Editar datos del pozo
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+								<path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+							  </svg>
+						</button>
 					</p>
 					<p class="delete-well-button__container">
-						<button id="delete_well_btn">Eliminar pozo</button>
-					</p>
-					<p class="add-well-button__container">
-						<button id="add_well_btn">Agregar pozo</button>
+						<button id="delete_well_btn">
+							Eliminar pozo actual
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+								<path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+							  </svg>
+						</button>
 					</p>
 				</div>
 			</article>
 		</section>
-		<!-- <section class="well-info">
-			<article>
-				<div class="info-container">
-					<h2>Información del pozo:</h2>
-					<p id="info_paragraph">
-
-					</p>
-				</div>
-			</article>
-		</section> -->
-		<!-- <section>
-			<div>
-				<p class="update-well-button__container">
-					<button id="update_well_btn">Actualizar pozo</button>
-				</p>
-				<p class="add-well-button__container">
-					<button id="add_well_btn">Agregar pozo</button>
-				</p>
-			</div>
-		</section> -->
 	</main>
 	<!-- Modal to add new wells -->
 	<div id="well_modal_container">
 		<div id="add_well_modal">
-			<p class="x-container">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="x_icon" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-					<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-				</svg>
-			</p>
+			<div class="modal-header">
+				<p class="red-font">* Campos obligatorios</p>
+				<p class="x-container">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="x_icon" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+						<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+					</svg>
+				</p>
+			</div>
 			<p>
-				<label for="well_name">Nombre del pozo:</label>
+				<label for="well_name">Nombre del pozo:<span class="red-font">*</span></label>
 				<input id="well_name" type="text">
 			</p>
 			<p>
@@ -165,13 +154,13 @@
 				<input id="location" type="text">
 			</p>
 			<p class="send-new-well__container">
-				<button id="send_new_well">Enviar</button>
+				<button id="send_new_well">Añadir pozo</button>
 			</p>
 		</div>
 	</div>
 	<!-- New well added notification -->
 	<div id="add_success_container">
-		<p>Nuevo Pozo Agregado con éxito</p>
+		<p>Nuevo pozo agregado con éxito</p>
 	</div>
 
 	<!-- Modal to update existing wells -->
@@ -251,13 +240,13 @@
 				<input id="location_update" type="text">
 			</p>
 			<p class="send-update-well__container">
-				<button id="send_update_well">Enviar</button>
+				<button id="send_update_well">Actualizar pozo</button>
 			</p>
 		</div>
 	</div>
 	<!-- well updated notification -->
 	<div id="update_success_container">
-		<p>Pozo Actualizado con éxito</p>
+		<p>Pozo actualizado con éxito</p>
 	</div>
 	<!-- Modal to delete existing wells -->
 	<div id="delete_modal_container">
@@ -278,7 +267,7 @@
 	</div>
 	<!-- well delete notification -->
 	<div id="delete_success_container">
-		<p>Pozo Eliminado con éxito</p>
+		<p>Pozo eliminado con éxito</p>
 	</div>
 	<script type="module" src="./js/san_jose.js"></script>
 </body>

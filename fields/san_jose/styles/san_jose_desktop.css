@@ -1,33 +1,46 @@
-.intro-table {
-	width: 40rem;
+header {
+	padding: 1rem;
+}
+
+.logo-title__container img {
+	width: 15.8rem;
+	height: 5.4rem;
 }
 
 .well-table {
 	width: 50%;
 }
 
+.well-table p {
+	width: 40rem;
+}
+
 .table-container {
 	width: 40rem;
 }
+
+#add_well_btn {
+	width: 40rem;
+}
+
 .table-and-info {
 	display: flex;
-	/* text-align: center; */
+	margin: 3rem auto 0;
+	width: 120rem;
 }
 
 .well-info {
-	/* width: 64rem; */
 	width: 50%;
-	/* padding: 2rem; */
-	margin-top: 3rem;
+	margin-top: 9rem;
 }
 
 .info-container {
-	width: 50rem;
+	width: 55rem;
 	padding: 2rem;
 }
 
 #info_paragraph {
-	width: 46rem;
+	width: 51rem;
 }
 
 .info-container h2 {
@@ -36,8 +49,16 @@
 
 .buttons-container {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
+}
+
+.update-well-button__container {
+	padding-right: 1rem;
+}
+
+.delete-well-button__container {
+	padding-left: 1rem;
 }
 
 #add_well_modal, #update_well_modal {
