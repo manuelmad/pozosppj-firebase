@@ -5,9 +5,23 @@ import "./deleteWell.js";
 
 import { getDocs, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
-import { db } from "../../../src/firebase.js";
+import { db } from "../../src/firebase.js";
 
-let current_field = localStorage.getItem("current_field");
+// Get the requested field from local storage
+export let current_field = localStorage.getItem("current_field");
+
+// Change the field title according to requested field from local storage
+if(current_field == "sanjose") {
+	document.getElementById("field_title").innerText = "CAMPO SAN JOSÉ";
+} else if(current_field == "alturitas") {
+	document.getElementById("field_title").innerText = "CAMPO ALTURITAS";
+} else if(current_field == "sanjulian") {
+	document.getElementById("field_title").innerText = "CAMPO SAN JULIÁN";
+} else if(current_field == "machiques") {
+	document.getElementById("field_title").innerText = "CAMPO MACHIQUES";
+} else if(current_field == "alpuf") {
+	document.getElementById("field_title").innerText = "CAMPO ALPUF";
+}
 
 // Array containing all the names of the well in the data base, to be used in addWell.js to add only wells thta don't exist
 export let well_names_array = [];
@@ -15,7 +29,7 @@ export let well_names_array = [];
 // Object containing the current viewed well, to be used in updateWell.js to update this especific well only
 export let current_viewed_well = {};
 
-const info_paragraph = document.getElementById("info_paragraph");
+export const info_paragraph = document.getElementById("info_paragraph");
 const tbody = document.getElementById("tbody");
 
 // Function to add as many rows to the table as documents in the sanjose collection
