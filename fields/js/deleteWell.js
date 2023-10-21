@@ -18,7 +18,7 @@ function showDeleteModal() {
         return;
     }
 
-    delete_confirmation__paragraph.innerHTML = `Si desea eliminar definitivamente el pozo <b>${current_viewed_well["nombre del pozo"]}</b>, por favor haga clic en el botón "Confirmar".`;
+    delete_confirmation__paragraph.innerHTML = `Si desea eliminar definitivamente el pozo <b>${current_viewed_well["nombre del pozo"]}</b>, por favor ingrese la clave secreta y haga clic en el botón "Confirmar".`;
 
     delete_modal_container.style.display = "block";
 }
@@ -46,11 +46,21 @@ function hideDeleteSuccess() {
 
 /* Delete Existing Well */
 
-// Delete a document in collection "sanjose"
+// Delete a document in the collection (field)
+
+// Confirm button
 const send_delete_well = document.getElementById("send_delete_well");
 send_delete_well.addEventListener("click", deleteExistingWell);
 
+// Secret password input
+const delete_password = document.getElementById("delete_password");
+
 async function deleteExistingWell() {
+    // If not the correct password, dont delete the well
+    if(delete_password.value !== "123") {
+        alert("Clave secreta inválida.");
+        return;
+    }
 
     await deleteDoc(doc(db, current_field, current_viewed_well["nombre del pozo"]));
 

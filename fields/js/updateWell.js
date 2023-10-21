@@ -45,6 +45,7 @@ function showUpdateModal() {
     lat_y_update.value = current_viewed_well["latitud y"];
     utm_id_update.value = current_viewed_well["utm projection id"];
     well_type_update.value = current_viewed_well["tipo de pozo"];
+
     // For the dates is a bit complicated:
     const datei = new Date();
     let drillInit = (current_viewed_well["inicio perforacion"].seconds)*1000-16200000; // I had to sustract 4,5 hours (16,2 millions miliseconds) because JS added 4,5 hours to the date coming from Firebase.
@@ -110,7 +111,7 @@ function hideUpdateSuccess() {
 
 /* Update Existing Well */
 
-// Update a document in collection "sanjose"
+// Update a document in the current collection (field)
 const send_update_well = document.getElementById("send_update_well");
 send_update_well.addEventListener("click", updateExistingWell);
 

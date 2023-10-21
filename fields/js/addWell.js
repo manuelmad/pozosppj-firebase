@@ -48,7 +48,6 @@ function hideAddModal() {
 
 // show / hide Success Add Modal
 const add_success_container = document.getElementById("add_success_container");
-// add_success_container.style.display = "none";
 
 function showAddSuccess() {
     add_success_container.style.display = "flex";
@@ -60,7 +59,7 @@ function hideAddSuccess() {
 
 /* Add New Well */
 
-// Add a new document in collection "sanjose"
+// Add a new document in the current collection (field)
 const send_new_well = document.getElementById("send_new_well");
 send_new_well.addEventListener("click", addNewWell);
 

@@ -1,9 +1,8 @@
-// import { current_field } from "../../../src/index.js";
 import "./addWell.js";
 import "./updateWell.js";
 import "./deleteWell.js";
 
-import { getDocs, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 import { db } from "../../src/firebase.js";
 
@@ -23,7 +22,7 @@ if(current_field == "sanjose") {
 	document.getElementById("field_title").innerText = "CAMPO ALPUF";
 }
 
-// Array containing all the names of the well in the data base, to be used in addWell.js to add only wells thta don't exist
+// Array containing all the names of the well in the data base, to be used in addWell.js to add only wells that don't exist yet
 export let well_names_array = [];
 
 // Object containing the current viewed well, to be used in updateWell.js to update this especific well only
@@ -32,11 +31,25 @@ export let current_viewed_well = {};
 export const info_paragraph = document.getElementById("info_paragraph");
 const tbody = document.getElementById("tbody");
 
-// Function to add as many rows to the table as documents in the sanjose collection
+// Function to add as many rows to the table as documents in the current collection (field)
 function addRowsToBody(data) {
+	
 	tbody.innerHTML = "";
 	well_names_array = [];
 	current_viewed_well = {};
+
+	// If there is not one single doc in the collection, add a row to the body informing that this collection is empty and stop the function
+	// console.log(data);
+	if(data.length == 0) {
+		tbody.innerHTML = `
+			<tr>
+				<td colspan="3">No hay pozos en esta base de datos.</td>
+			</tr>
+		`;
+		return;
+	}
+
+
 	data.forEach(item => {
 		const well = item.data();
 
@@ -117,14 +130,10 @@ function addRowsToBody(data) {
 
 }
 
-// Get the documents of the collection sanjose, but I realized that onSnapshot receives a collection, not a set of documents
-// export const wellsInSanJose = await getDocs(collection(db, 'sanjose'));
-// addRowsToBody(wellsInSanJose.docs);
-
 // Get the collection sanjose
-const collectionSaJose = await collection(db, current_field);
+const currentFieldCollection = await collection(db, current_field);
 
-// Listen to the sanjose collection and get changes everytime a document is updated, created or deleted
-onSnapshot(collectionSaJose, (snapshot)=>{
+// Listen to the current collection and get changes everytime a document is updated, created or deleted
+onSnapshot(currentFieldCollection, (snapshot)=>{
 	addRowsToBody(snapshot.docs);
 });
