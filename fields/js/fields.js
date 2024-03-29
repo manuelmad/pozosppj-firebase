@@ -2,7 +2,7 @@ import "./addWell.js";
 import "./updateWell.js";
 import "./deleteWell.js";
 
-import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 import { db } from "../../src/firebase.js";
 

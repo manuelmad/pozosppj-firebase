@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "@google-cloud/recaptcha-enterprise": "^5.6.0",
     "firebase": "^10.4.0"
   },
   "name": "pozosppj-firebase",
   "description": "An application to visualize the information available in a firebase database (Firestore)",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
